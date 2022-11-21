@@ -15,8 +15,8 @@ Python不需要重载，因为重载是解决不同参数的问题的
 
 类属性与方法:
     1.Python默认情况下，所有成员都是公共的
-    2.__private_attrs：两个下划线开头，声明该属性为私有，不能在类的外部被使用或直接访问。
-    3.__private_method：两个下划线开头，声明该方法为私有方法，只能在类的内部调用 ，不能在类的外部调用。
+    2.__private/__private_method：两个下划线开头，声明该成员为私有的，只能在本类的内部调用 ，不能在类的外部和子类调用。
+    3._protected_attrs/_protected_method：protected（保护）类型的成员，只允许类本身和子类进行访问。其实和公开的，这种保护不是强制规定，而是一种程序员的约定，解释器不做访问控制。
     在类的内部，使用 def 关键字来定义一个方法，与一般函数定义不同，类方法必须包含参数 self，且为第一个参数，self 代表的是类的实例。
         self 的名字并不是规定死的，也可以使用 this，但是最好还是按照约定使用 self。
     4.内置变量：双下划线开头且结尾的变量，在 Python 中被称为内置变量，如__name__，在本模块是__main__，在导入的模块中是该模块的缩写
@@ -45,45 +45,129 @@ print("------------------- People -------------------")
 # 自定义一个People class
 class People:
     name = None  # 定义属性方式1
-    __leg = '腿'
 
     # 构造方法
     def __init__(self, **vardict):
-        self.age = 18  # 定义属性方式2
+        self.age = 18  # 定义属性方式2，默认值18
         self.name = vardict.get("name")
-        if self.name is None:
+        if self.name is None:  # 设置默认值
             self.name = "人类"
-
-    def __getYou(self):
-        print('__getYou')
 
     # 自定义方法
     def getName(self):
-        print(self.__leg)
-        self.__getYou()
         return self.name
 
 
 # 实例化类
 p1 = People()
-p2 = People(name="李四")
 
 # 定义属性方式3，属于该class
 People.number1 = 2000
 print(p1.number1)
+
+print(p1.getName())  # # 调用方法1，对象调用
+People.getName(p1)  # 调用方法2，传入对象
+
+print(p1.name)
+print(p1.age)
+
+print("------------------------------------------------")
+
+p2 = People(name="李四")
 print(p2.number1)
 
 # 定义属性方式4，属于该实例
 p2.number2 = 3000
 try:
-    print(p1.number2)
+    p3 = People()
+    print(p3.number2)
 except AttributeError as e:
     print(e)
 print(p2.number2)
 
+print(p2.getName())
+
+print("------------------- Permissions -------------------")
+
+
+class Permissions:
+    __private = '私有属性'
+    _protected = '受保护的属性'
+
+    def __private_Method(self):
+        """私有方法"""
+        print('私有方法')
+
+    def _protected_Method(self):
+        """受保护的方法"""
+        print('受保护的方法')
+
+    @classmethod
+    def class_m(cls):
+        print("类方法 - 类对象 - 类内部调用私有/受保护：")
+        print(cls.__private)
+        cls.__private_Method(cls)
+        print(cls._protected)
+        cls._protected_Method(cls)
+
+    def get_Member(self):
+        print("-----内部调用-----")
+        print(self.__private)
+        print(self._protected)
+        self.__private_Method()
+        self._protected_Method()
+
+
+class Group(Permissions):
+
+    def getPermissions(self):
+        """测试父类的成员"""
+        try:
+            print(super().__private)
+        except AttributeError as e:
+            print(e)
+
+        try:
+            super().__private_Method()
+        except AttributeError as e:
+            print(e)
+
+        print(super()._protected)
+        super()._protected_Method()
+
+
+p1 = Permissions()
+
+try:
+    print(p1.__private)
+except AttributeError as e:
+    print(e)
+
+try:
+    print(p1._protected)
+except AttributeError as e:
+    print(e)
+
+try:
+    p1.__private_Method()
+except AttributeError as e:
+    print(e)
+
+try:
+    p1._protected_Method()
+except AttributeError as e:
+    print(e)
+
+p1.get_Member()
+
+print("----------------------突破权限--------------------------")
+p1.class_m()
+Permissions.class_m()
+
 print("------------------------------------------------")
 
-print(p1.getName())
-print(p1.name)
-print(p1.age)
-print(p2.getName())
+g = Group()
+
+g.getPermissions()
+print(g._protected)
+g._protected_Method()
