@@ -45,6 +45,15 @@ pip源的选择：
 Win32 -> 指的就是Windows系统；
 64 bit- > 指的是Windows是64位的；
 AMD64 -> 指的就是 CPU是x64的
+
+warning：
+    DEPRECATION: numpy is being installed using the legacy 'setup.py install' method,
+    because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. 
+    pip 23.1 will enforce this behaviour change.
+    A possible replacement is to enable the '--use-pep517' option. 
+    Discussion can be found at https://github.com/pypa/pip/issues/8559
+
+    加入--use-pep517选项，如：pip install --use-pep517 -r  requirements.txt
 """
 
 print(platform.architecture())  # 查看平台支持
