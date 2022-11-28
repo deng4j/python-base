@@ -55,7 +55,8 @@ python -h：查看python介绍
     -V：查看当前版本
     -c cmd ：作为字符串传入的程序（终止选项列表）
 
-python -m module：去标准库中搜索，将模块当作脚本使用，并以 __main__模块执行其内容。
+python -m module：去标准库中搜索，将模块当作脚本使用，并以__main__模块执行其内容。
+如，.../venv/bin/python -m scrapy crawl baidu实际上运行的是.../venv/lib/python3.9/site-packages/scrapy/commands/crawl.py
 
 python test.py arg1 arg2 arg3：执行该文件，并赋予参数。
 
