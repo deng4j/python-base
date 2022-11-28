@@ -29,6 +29,8 @@ pip也有pip、pip2、pip3之分。pip是从属于Python的，对应的pip负责
 
 路径和版本：pip -V
 
+帮助：pip -helpe 
+
 ## pip install
 
 从以下位置安装软件包：
@@ -157,7 +159,6 @@ Options:
 
 ```css
 卸载包：pip uninstall package_name
-从指定位置卸载：pip uninstall pyqt5-tools --target=/Users/deng4j/development/python3_9venv/venv/lib/python3.9/site-packages
 ```
 
 
