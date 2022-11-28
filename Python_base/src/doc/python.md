@@ -28,12 +28,14 @@ pyc文件是由.py文件经过编译后生成的字节码文件，其加载速�
 
 ​    2.创建虚拟模块：mkvirtualenv [虚拟环境名字]
 
-​    3.virtualenv -p /usr/bin/python3.8 [虚拟环境名字]：给虚拟环境指定解释器
+​    3.给虚拟环境指定解释器：virtualenv -p /usr/bin/python3.8 [虚拟环境名字]
 
-​    4.进入指定虚拟环境：workon [虚拟环境名字]
-​      4.1查看当前虚拟环境安装的模块：workon 或 lsvirtualenv
+​    4.建立虚拟环境后，需要激活虚拟模块：
+- Windows：虚拟环境的位置的Scripts文件夹中打开命令行输入：activate 或者 .\activate.bat
+- mac：source activate
 
-​    5.建立虚拟环境后，需要激活虚拟模块：虚拟环境的位置的Scripts文件夹中打开命令行输入：activate 或者 .\activate.bat
+​    5.进入指定虚拟环境：workon [虚拟环境名字]
+- 查看当前虚拟环境安装的模块：workon 或 lsvirtualenv
 
 ​    6.退出虚拟环境：deactivate.bat
 
@@ -69,3 +71,58 @@ python setup.py bdist_egg .egg格式
 python setup.py bdist_wheel .whl格式
 python setup.py bdist_wininst windows下面的文件exe
 ```
+
+# Anaconda
+
+Anaconda（[官方网站](https://link.zhihu.com/?target=https%3A//www.anaconda.com/download/%23macos)）就是可以便捷获取包且对包能够进行管理，同时对环境可以统一管理的发行版本。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。
+
+
+
+# pip和conda
+
+**pip是用于安装和管理软件包的包管理器：**
+
+- 仅适用于Python
+
+- 安装包时**或许**会直接忽略依赖项而安装，仅在结果中提示错误。
+
+- 依赖检查：
+
+  ① **不一定**会展示所需其他依赖包。
+
+  ② 安装包时**或许**会直接忽略依赖项而安装，仅在结果中提示错误。
+
+- 维护多个环境难度较大。
+- 在系统自带Python中包的更新/回退版本/卸载将影响其他程序。
+
+
+
+**conda是包及其依赖项和环境的管理工具：**
+
+- 适用语言：Python, R, Ruby, Lua, Scala, Java, JavaScript, C/C++, FORTRAN。
+
+-  适用平台：Windows, macOS, Linux
+
+-  conda包和环境管理器包含于Anaconda的所有版本当中。
+
+- 用途：
+
+  ① 快速安装、运行和升级包及其依赖项。
+
+  ② 在计算机中便捷地创建、保存、加载和切换环境。
+
+- 依赖检查：
+
+  ① 列出所需其他依赖包。
+
+  ② 安装包时自动安装其依赖项。
+
+  ③ 可以便捷地在包的不同版本中自由切换。
+
+- 比较方便地在不同环境之间进行切换，环境管理较为简单。
+- 不会影响系统自带Python。
+
+如果你需要的包要求不同版本的Python，你无需切换到不同的环境，因为conda同样是一个环境管理器。
+
+
+

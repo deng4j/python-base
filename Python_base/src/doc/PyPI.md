@@ -124,6 +124,7 @@ AMD64 -> 指的就是 CPU是x64的
 升级pip：pip install -U pip
 安装稳定的包：pip install --pre SomePackage
 从连接中安装：pip install --index-url http://my.package.repo/simple/ SomePackage
+添加用户信息安装，防止sip机制不允许命令行写入内容到系统目录：pip3 install jupyter --user
 ```
 
 使用pip安装特定版本的package，默认安装最新版本，通过使用==, >=, <=, >, <来指定一个版本号，如：pip install 'Markdown<2.0' 或 pip install 'Markdown>2.0,<2.0.3
