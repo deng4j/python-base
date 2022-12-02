@@ -48,8 +48,6 @@ python -m pip install [options] [-e] <local project path> ...
 python -m pip install [options] <archive url/path> ...
 ```
 
-
-
 Options：
 
 - **-r**, **--requirement** <file>：根据依赖文件批量安装库，该选项可以重复添加
@@ -118,7 +116,7 @@ AMD64 -> 指的就是 CPU是x64的
 
 ```css
 避免没配置python环境变量：python -m pip install pip==22.2.2
-指定安装位置：pip install django -t=D:\development\venv3.8.5\Lib\site-packages
+指定安装位置（最好别用，有很多文件丢失）：pip install django -t=D:\development\venv3.8.5\Lib\site-packages
 安装包：pip install mysqlclient-1.4.6-cp39-cp39-win_amd64.whl
 安装包：pip install Flask-WTF-0.10.0.tar.gz
 升级pip：pip install -U pip
@@ -139,6 +137,8 @@ AMD64 -> 指的就是 CPU是x64的
 | `!=`     | Any version not equal to the specified version.              | `!=3.1`: any version other than `3.1`.            |
 | `~=`     | Any compatible1 version.                                     | `~=3.1`: any version compatible1 with `3.1`.      |
 | `*`      | Can be used at the end of a version number to represent *all*. | `==3.1.*`: any version that starts with `3.1`.    |
+
+在没有指定安装路径时，默认安装在pip所在在环境下。
 
 ## pip uninstall
 

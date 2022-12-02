@@ -18,34 +18,34 @@ pyc文件是由.py文件经过编译后生成的字节码文件，其加载速�
 - pyenv：简单的 Python 版本管理工具。
 - Vex：可以在虚拟环境中执行命令
 - virtualenv：创建独立 Python 环境的工具。
-- virtualenvwrapper：virtualenv 的一组扩展。
+- virtualenvwrapper：virtualenv 的一组扩展。可以方便的创建、删除、复制、切换不同的虚拟环境。
+  - pip install virtualenvwrapper       （Linux系统使用命令）
+  - pip install virtualenvwrapper-win   （windows系统使用命令）
 
 **配置虚拟环境：**
 
-​    1.配置虚拟环境：pip install virtualenv
-​                    pip install virtualenvwrapper       （Linux系统使用命令）
-​                    pip install virtualenvwrapper-win   （windows系统使用命令）
+1. 安装virtualenv：pip install virtualenv
+   - 安装后会在python的bin目录下有一个可执行文件virtualenv 
+2. 创建虚拟模块：mkvirtualenv [虚拟环境名字]
+3. 选择一个python解释器来创建虚拟化环境：virtualenv -p /usr/bin/python3.8 [虚拟环境名字]
+4. 建立虚拟环境后，需要激活虚拟模块：
 
-​    2.创建虚拟模块：mkvirtualenv [虚拟环境名字]
-
-​    3.给虚拟环境指定解释器：virtualenv -p /usr/bin/python3.8 [虚拟环境名字]
-
-​    4.建立虚拟环境后，需要激活虚拟模块：
 - Windows：虚拟环境的位置的Scripts文件夹中打开命令行输入：activate 或者 .\activate.bat
 - mac：source activate
 
-​    5.进入指定虚拟环境：workon [虚拟环境名字]
+5. 进入指定虚拟环境：workon [虚拟环境名字]
+
 - 查看当前虚拟环境安装的模块：workon 或 lsvirtualenv
 
-​    6.退出虚拟环境：deactivate.bat
+6. 退出虚拟环境：deactivate.bat
 
 删除虚拟环境：rmvirtualenv [虚拟环境名字]
 
-**pycharm创建虚拟环境**就很简单：Project Interpreter中Add，然后给虚拟环境指定一个空目录位置，和基本解释器即可。可以勾选： Make available to all projects可用于所有项目、Inherit global site-packages继承全局站点软件包
+**pycharm创建虚拟环境**就很简单：Project Interpreter中Add，然后给虚拟环境指定一个空目录位置，和基本解释器即可。可以勾选： Make available to all projects可用于所有项目、Inherit global site-packages继承全局站点软件包。
 
 虚拟环境有scrapy库而解释器没有，不能直接使用scrpay命令：
        1.  ln -s /Library/Frameworks/Python.framework/Versions/Python3.9/bin/scrapy /usr/local/bin/scrapy
-       2.  /venv/bin/python -m scrpay（虚拟环境路径的python，推荐）
+              2.  /venv/bin/python -m scrpay（虚拟环境路径的python，推荐）
 
 # 命令
 
@@ -54,9 +54,12 @@ pyc文件是由.py文件经过编译后生成的字节码文件，其加载速�
 python -h：查看python介绍
     -V：查看当前版本
     -c cmd ：作为字符串传入的程序（终止选项列表）
+python -m module：去可执行文件python环境的标准库中搜索，将模块当作脚本使用，并以__main__模块执行其内容。
 
-python -m module：去标准库中搜索，将模块当作脚本使用，并以__main__模块执行其内容。
-如，.../venv/bin/python -m scrapy crawl baidu实际上运行的是.../venv/lib/python3.9/site-packages/scrapy/commands/crawl.py
+.../venv/bin/python -m scrapy crawl baidu：
+	实际上运行的是.../venv/lib/python3.9/site-packages/scrapy/commands/crawl.py
+.../venv/bin/python -m PyQt5.uic.pyuic：
+	实际运行的是.../venv/lib/python3.9/site-packages/PyQt5/uic/pyuic.py
 
 python test.py arg1 arg2 arg3：执行该文件，并赋予参数。
 
