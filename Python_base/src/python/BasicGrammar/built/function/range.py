@@ -1,5 +1,5 @@
 """
-range(start, stop[, step])：返回的是一个可迭代对象（类型是对象），而不是列表类型， 所以打印的时候不会打印列表。
+range(start, stop[, step])：返回的是一个左闭右开[start,end)的可迭代对象（类型是对象），而不是列表类型， 所以打印的时候不会打印列表。
     start: 计数从 start 开始。默认是从 0 开始。
     stop: 计数到 stop 结束，但不包括 stop。
     step：步长，默认为1。
