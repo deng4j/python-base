@@ -130,3 +130,19 @@ Anaconda（[官方网站](https://link.zhihu.com/?target=https%3A//www.anaconda.
 
 
 
+# GIL（全局解释器锁）
+
+GIL（全局解释器锁）是最流程的CPython解释器（平常称为 Python）中的一个技术术语，其本质上类似操作系统的 Mutex。
+
+GIL的功能是：在CPython解释器中执行的每一个Python线程，Thread 1、2、3 轮流执行，每一个线程在开始执行时，都会锁住 GIL，以阻止别的线程执行；同样的，每一个线程执行完一段后，会释放 GIL，以允许别的线程开始利用资源。
+
+![Alt](images/2-1ZS012105L23.gif)
+
+间隔式检查（check_interval）：CPython 解释器会去轮询检查线程GIL的锁住情况，每隔一段时间，Python解释器就会强制当前线程去释放GIL，这样别的线程才能有执行的机会。
+
+有了 GIL，并不意味着 Python 程序员就不用去考虑线程安全了，因为即便 GIL 仅允许一个 Python 线程执行，但别忘了 Python 还有 check interval 这样的抢占机制。
+
+接触GIL限制：
+
+- 别用多线程
+- 底层实现考虑其他东西
