@@ -1,5 +1,9 @@
 def do_format(column, separator):
-    data = input("输入文本：\n")
+    data = ''
+    print('输入文字，按ok结束输入')
+    for i in iter(input, 'ok'):
+        data += i
+    data = ''.join(set(data.replace('\n', '').replace(' ', '')))
     count = 0
     new_data = ''
     for c in data:

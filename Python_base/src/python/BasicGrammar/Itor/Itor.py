@@ -39,3 +39,13 @@ print("--------------- 字符串迭代 ---------------")
 
 i = iter('abcd')
 print(next(i))
+
+print("--------------- 迭代中止 ---------------")
+
+it = iter(input, '3')  # 遇到'3'中止
+
+try:
+    while it:
+        print(next(it))
+except:
+    pass
