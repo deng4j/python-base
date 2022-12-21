@@ -7,3 +7,4 @@ list.index(x[, start[, end]])从列表中找出某个值第一个匹配项的索
 
 list1 = ['Google', 'Runoob', 'Taobao']
 print('Runoob 索引值为', list1.index('Google'))
+print('GoogleXXX 索引值为', list1.index('GoogleXXX'))
