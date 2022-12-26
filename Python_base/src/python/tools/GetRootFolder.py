@@ -52,11 +52,12 @@ def getRelativePathsByRepositoryRoot(projectPath, path_from_repository_root):
 
 
 if __name__ == '__main__':
+    print("\033[1;34m  --------运行-------\n \033[0m")
     contentPath = getContentRootPath()
     print(contentPath)
 
     contentRoot = getRelativePathsByContentRoot('Python_base', 'src/resources/file/folder1/print.txt')
-    print(contentRoot)  # 获取相对路径
+    print(contentRoot)  # 获取绝对路径
 
     repositoryPath = getRepositoryRootPath()
     print(repositoryPath)

@@ -13,7 +13,7 @@ sys模块是与python解释器交互的一个接口。sys 模块提供了许多�
  sys.maxint #最大的Int值
  sys.maxunicode #最大的Unicode值
  sys.modules #返回系统导入的模块字段，key是模块名，value是模块
- sys.path #返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值
+ sys.path #返回模块、文件的搜索路径，初始化时使用PYTHONPATH环境变量的值
  sys.platform #返回操作系统平台名称
  sys.stdout #标准输出
  sys.stdin #标准输入
