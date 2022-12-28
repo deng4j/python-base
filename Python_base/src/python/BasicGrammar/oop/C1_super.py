@@ -8,11 +8,20 @@ class People:
     def __init__(self):
         print("People")
 
+    def fight(self):
+        print('人类打架')
+
 
 class Animal:
 
     def __init__(self):
         print("Animal")
+
+    def fight(self):
+        print('动物打架')
+
+    def growl(self):
+        print('动物咆哮')
 
 
 class Student(People, Animal):
@@ -25,3 +34,5 @@ class Student(People, Animal):
 
 if __name__ == "__main__":
     student = Student()
+    student.fight()
+    student.growl()

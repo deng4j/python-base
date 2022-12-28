@@ -6,13 +6,13 @@
 
 
 class People:
-    name = None
+    name = '人类'
 
     # 构造方法
     def __init__(self, **vardict):
         self.name = vardict.get("name")
         if self.name is None:
-            self.name = "人类"
+            self.name = "init人类"
 
     # 自定义方法
     def getName(self):
@@ -20,12 +20,12 @@ class People:
 
 
 class Animal:
-    name = None
+    name = "动物"
 
     # 构造方法
     def __init__(self):
         print("Animal.class")
-        self.name = "动物"
+        self.name = "init动物"
 
     # 自定义方法
     def getName(self):
