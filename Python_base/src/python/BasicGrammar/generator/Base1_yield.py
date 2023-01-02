@@ -1,7 +1,9 @@
+from collections.abc import Iterable
+
 """
 使⽤了yield关键字的函数不再是函数，⽽是⽣成器。（使⽤了yield的函数就是⽣成器）
 
-生成器的本质就是迭代器，同时也并不仅仅是迭代器，生成器提供了非常方便的自定义迭代器的途径
+生成器是一个返回迭代器的函数，生成器的本质就是迭代器，同时也并不仅仅是迭代器，生成器提供了非常方便的自定义迭代器的途径
 在函数中但凡出现yield关键字，再调用函数，就不会继续执行函数体代码，而是会返回一个值。
 
 yield关键字有两点作⽤：
@@ -56,3 +58,5 @@ for i in g:
     print(i)
 
 print(f"list(func()): {list(func())}")
+
+print(isinstance(g, Iterable))
