@@ -121,7 +121,7 @@ AMD64 -> 指的就是 CPU是x64的
 安装包：pip install Flask-WTF-0.10.0.tar.gz
 升级pip：pip install -U pip
 安装稳定的包：pip install --pre SomePackage
-从连接中安装：pip install --index-url http://my.package.repo/simple/ SomePackage
+从连接中安装：pip install SomePackage -i https://mirrors.aliyun.com/pypi/simple/
 添加用户信息安装，防止sip机制不允许命令行写入内容到系统目录：pip3 install jupyter --user
 ```
 
