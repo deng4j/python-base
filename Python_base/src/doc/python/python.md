@@ -65,7 +65,7 @@ python test.py arg1 arg2 arg3：执行该文件，并赋予参数。
 
 where python：查看python解释器路径
 which python：查看python的路径
-python：进入终端交互模式，可以编写代码
+python：进入python shell终端交互模式，可以编写代码
 exit()：退出终端交互模式
 
 python setup.py sdist 源码压缩包 生成dist文件

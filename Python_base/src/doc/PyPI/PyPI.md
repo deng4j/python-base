@@ -159,7 +159,7 @@ Options:
 - **--root-user-action** <root_user_action>：如果 pip 以根用户身份执行操作。默认情况下，将显示一条警告消息。
 
 ```css
-卸载包：pip uninstall package_name
+卸载包：pip uninstall package_name1 package_name2
 ```
 
 
