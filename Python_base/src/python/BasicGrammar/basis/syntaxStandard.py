@@ -62,3 +62,14 @@ if a:
 
 if b:
     print(b)
+
+print("--------------------------- del ----------------------------------")
+
+# 删除引用
+str3 = "aa"
+del str3
+
+try:
+    print(str3)
+except:
+    print("NameError: name 'str3' is not defined")
