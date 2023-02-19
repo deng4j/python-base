@@ -6,6 +6,8 @@
 """
 
 dict1 = {}
+print(type(dict1))
+
 dict1['one'] = "1 - 菜鸟教程"
 dict1[2] = "2 - 菜鸟工具"
 
