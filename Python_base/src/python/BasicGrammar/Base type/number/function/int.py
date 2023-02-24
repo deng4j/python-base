@@ -7,6 +7,8 @@ int.from_bytes(bytes, byteorder, *, signed=False):byte转整数
 int.to_bytes(length, byteorder, *, signed=False):整数转byte
 """
 
+print("----------------- 转化 -----------------")
+
 print(int(-12.94))  # 浮点转int
 print(int('+1008'))  # 字符串转int
 print(int('-008'))
@@ -14,6 +16,11 @@ print(int('-008'))
 # 转换为一个十进制整数
 a1 = int("1", 10)
 print(a1)
+
+a2 = int(0xFF)
+print(a2)
+
+print("----------------- 二进制 -----------------")
 
 s1 = b'\xf1\xff'
 print(int.from_bytes(s1, byteorder='little', signed=True))

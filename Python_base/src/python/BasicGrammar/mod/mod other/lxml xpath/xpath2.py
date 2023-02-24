@@ -16,5 +16,5 @@ if __name__ == '__main__':
         print(question[index].xpath('string()'))
         print(answer[index].xpath('string()'))
     # 持久化存储
-    with open('./file/download/强国.html', 'w', encoding='utf-8') as fp:
+    with open('file/download/强国.html', 'w', encoding='utf-8') as fp:
         fp.write(page_text)

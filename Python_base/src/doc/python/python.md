@@ -146,3 +146,43 @@ GIL的功能是：在CPython解释器中执行的每一个Python线程，Thread 
 
 - 别用多线程
 - 底层实现考虑其他东西
+
+
+
+# 问题
+
+<font size="4" color="red">1.加深文件目录读取文件失败</font>
+
+当如下目录结构时，demo.py读取m.jpg文件是可以的
+
+```css
+--a
+  -files
+		-m.jpg
+  - demo.py
+
+read("./files/m.png")
+```
+
+但我要加深文件目录，如下，把文件放在c目录下，demo.py读取m.jpg文件失败，找不到文件路径
+
+```css
+--a
+  -c
+   -files
+     -m.jpg
+   -demo.py
+
+read("./files/m.png")
+```
+
+解决：重命名c文件再次运行代码，可以了，这时候就可以改回名字
+
+
+
+
+
+
+
+
+

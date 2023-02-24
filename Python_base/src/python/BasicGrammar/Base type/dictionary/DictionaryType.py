@@ -1,8 +1,8 @@
 """
 字典是无序的对象集合。字典当中的元素是通过键来存取的，而不是通过偏移存取。
 字典是一种映射类型，字典用 { } 标识，它是一个无序的 键(key) : 值(value) 的集合。
-键(key)必须使用不可变类型。
-在同一个字典中，键(key)必须是唯一的。
+注意：键(key)必须使用不可变类型，如不能使用list作为key。
+在同一个字典中，键(key)是唯一的，相同的key，后面的会覆盖前面的。
 """
 
 dict1 = {}
@@ -11,11 +11,11 @@ print(type(dict1))
 dict1['one'] = "1 - 菜鸟教程"
 dict1[2] = "2 - 菜鸟工具"
 
-tinydict = {'name': 'runoob', 'name': 'runoob', 'code': 1, 'site': 'www.runoob.com'}
+tinydict = {'name': 'runoob1', 'name': 'runoob2', 'code': 1, 'site': 'www.runoob.com'}
 
+print(tinydict)  # 输出完整的字典
 print(dict1['one'])  # 输出键为 'one' 的值，没有该key会抛异常
 print(dict1[2])  # 输出键为 2 的值
-print(tinydict)  # 输出完整的字典
 print(tinydict.keys())  # 输出所有键
 print(tinydict.values())  # 输出所有值
 print(tinydict.get("site"))  # 通过key获取value，字典中没有会返回None

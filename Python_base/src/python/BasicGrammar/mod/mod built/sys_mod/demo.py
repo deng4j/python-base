@@ -42,4 +42,4 @@ print(sys.platform)  # 返回操作系统平台名称
 print(sys.path)  # 查看模块的位置
 
 # 将该路径添加为模块搜索路径
-sys.path.append('/Users/deng4j/development/pycharm_project/project1/Python_base/src/python')
+sys.path.append('/')

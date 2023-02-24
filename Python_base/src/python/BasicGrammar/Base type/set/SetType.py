@@ -4,7 +4,7 @@
 
 会去重
 
-用可变类型创建集合set会抛异常，如list等
+注意：用可变类型创建集合set会抛异常，如list等
 """
 
 sites = {'Google', 'Google', 'Taobao', 'Runoob', 'Facebook', 'Zhihu', 'Baidu'}
