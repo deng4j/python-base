@@ -17,7 +17,7 @@ def m1():
 
 
 def m2():
-    # 搜索".jpg"格式的文件
+    print("搜索'.jpg'格式的文件")
     f = glob.iglob(r'./files/*.jpg')
     print(f)
     for i in f:
