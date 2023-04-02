@@ -5,6 +5,7 @@ def urllib_download(IMAGE_URL, folderPath, suffix):
     import time
     folderPath = folderPath + '/' + str(time.time()) + suffix
     urlretrieve(IMAGE_URL, folderPath)
+    return folderPath
 
 
 def downloadRsc(url, folderPath, suffix):
