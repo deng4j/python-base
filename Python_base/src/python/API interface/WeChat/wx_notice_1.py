@@ -10,8 +10,8 @@ import requests
 # https请求方式: GET
 # https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET
 
-app_id = 'wx6cdfdfc72751acd1'
-app_secret = 'a0330df6222759d32cf4ea99d833201e'
+app_id = 'wx6cdxxxx'
+app_secret = 'a033xxxxxx'
 url = f'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={app_id}&secret={app_secret}'
 
 resp_json = requests.get(url).json()
@@ -23,7 +23,7 @@ access_token = resp_json.get('access_token')
 # https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN
 
 url = f'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token={access_token}'
-opend_id = "oG49O5g0A0PtB7EmVRnYtNsPYIjU"
+opend_id = "oG49O5g0A0PtB7Emxxxxxxxx"
 req_data = {
     "touser": opend_id,
     "msgtype": "text",
