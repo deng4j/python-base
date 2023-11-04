@@ -126,6 +126,10 @@ AMD64 -> 指的就是 CPU是x64的
 不验证SSL：pip --trusted-host pypi.python.org install SomePackage
 ```
 
+```python
+http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+```
+
 使用pip安装特定版本的package，默认安装最新版本，通过使用==, >=, <=, >, <来指定一个版本号，如：pip install 'Markdown<2.0' 或 pip install 'Markdown>2.0,<2.0.3
 
 | Operator | Description                                                  | Example                                           |
